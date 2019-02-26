@@ -1,7 +1,6 @@
 package com.example.ribbon;
 
 import com.netflix.loadbalancer.BaseLoadBalancer;
-import com.netflix.loadbalancer.NoOpPing;
 import com.netflix.loadbalancer.PingUrl;
 import com.netflix.loadbalancer.Server;
 
@@ -37,7 +36,7 @@ public class PingUrlTest {
         lb.setPing(new PingUrl());
         // 设置 Ping 时间间隔为 2 秒
         lb.setPingInterval(2);
-        Thread.sleep(6000);
+//        Thread.sleep(6000);
         for(Server s : lb.getAllServers()) {
             System.out.println(s.getHostPort() + " 状态：" + s.isAlive());
         }
